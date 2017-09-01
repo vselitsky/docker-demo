@@ -12,7 +12,7 @@ node {
      }
    }
    stage('docker build/push') {
-     docker.withRegistry('https://hub.docker.com/r/vselitsky/docker-demo/v1/', 'dockerhub') {
+     docker.withRegistry('vselitsky/docker-demo/v1/', 'dockerhub') {
        def app = docker.build("vselitlsky/docker-demo:${commit_id}", '.').push()
      }
    }
